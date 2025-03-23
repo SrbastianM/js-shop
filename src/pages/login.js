@@ -1,5 +1,3 @@
-import Router from "../routes/router";
-
 export default function Login() {
   return `
   <div class="h-screen flex items-center">

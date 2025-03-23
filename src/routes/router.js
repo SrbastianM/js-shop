@@ -32,7 +32,6 @@ class Router {
     }
 
     console.log("Path route", path);
-    this._updateFooterVisibility();
   }
 
   navigateTo(path) {
@@ -45,21 +44,6 @@ class Router {
     window.addEventListener("popstate", () => {
       this.loadRoute(window.location.pathname);
     });
-  }
-
-  _updateFooterVisibility(path) {
-    const footer = document.getElementById("js-footer");
-    console.log("Footer element:", footer); // Debugging line
-
-    if (footer) {
-      if (path === "/login") {
-        footer.classList.add("hidden");
-        footer.classList.remove("flex");
-      } else {
-        footer.classList.remove("hidden");
-        footer.classList.add("flex");
-      }
-    }
   }
 }
 

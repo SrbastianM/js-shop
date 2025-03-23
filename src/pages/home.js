@@ -1,8 +1,11 @@
+import Carousel from "/src/Presentation/organism/carousel";
+import Card from "../Presentation/components/card";
 export default function Home() {
   return `
-    <div class="h-screen flex">
+    <div>
+      ${Carousel()}
       <h1> Home Page </h1>
-      <p> Welcome to Home Page</p>
+      ${Card()}
     </div>
 `;
 }
