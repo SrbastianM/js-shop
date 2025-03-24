@@ -11,9 +11,11 @@ export default function Card() {
                 <div class="group relative"> 
                     ${Image()}
                     <div class="mt-4 flex justify-between"> 
-                        ${Span("Hello", "Black")}
+                        ${Span("Black Shirt", "Black")} 
+                        <p class="text-sm font-medium text-gray-900">$300</p>
                     </div>
                 </div>
+               
             </div>
         </div>
     </div>

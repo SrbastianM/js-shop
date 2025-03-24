@@ -1,6 +1,6 @@
 export default function Carousel() {
   document.addEventListener("DOMContentLoaded", () => {
-    const carouselContainer = document.querySelector("#content");
+    const carouselContainer = document.querySelector("#carousel-container");
     carouselContainer.innerHTML = carouselHTML;
   });
   const carouselHTML = `
