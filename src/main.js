@@ -2,6 +2,7 @@ import "./style.css";
 import { routes } from "/src/routes/routes";
 import Footer from "./Presentation/atoms/footer";
 import Router from "/src/routes/router.js";
+import { apiRequest } from "../src/Data/api";
 
 const router = new Router(routes);
 
@@ -17,3 +18,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const footerContainer = document.getElementById("js-footer-container");
 footerContainer.innerHTML = Footer();
+apiRequest();

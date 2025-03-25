@@ -1,11 +1,15 @@
-import Carousel from "/src/Presentation/organism/carousel";
+import { carousel } from "/src/Presentation/organism/carousel";
 import Card from "../Presentation/components/card";
+import { initCarousel } from "../Presentation/organism/carousel";
 export default function Home() {
   const testingTest =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.c";
   return `
     <div>
-      ${Carousel()}
+    <div id="js-carousel-container">
+     ${renderCarousel()}
+    </div>
+     
       <section class="dark:bg-dark bg-white py-[70px]">
         <div class="mx-auto px-4 sm:container">
           <div class="border-stroke dark:border-dark-3 border-b">
@@ -17,4 +21,12 @@ export default function Home() {
       ${Card()}
     </div>
 `;
+}
+
+async function renderCarousel() {
+  const carouselContent = await carousel();
+  document.getElementById("js-carousel-container").innerHTML = carouselContent;
+  const carouselElement = document.getElementById("controls-carousel");
+
+  initCarousel(carouselElement);
 }
