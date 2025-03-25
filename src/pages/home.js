@@ -1,5 +1,5 @@
 import { carousel } from "/src/Presentation/organism/carousel";
-import Card from "../Presentation/components/card";
+import { card } from "../Presentation/components/card";
 import { initCarousel } from "../Presentation/organism/carousel";
 export default function Home() {
   const testingTest =
@@ -18,9 +18,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-      ${Card()}
+      <div id="js-card-container"> </div>
+      ${renderCard()}
     </div>
 `;
+}
+
+async function renderCard() {
+  const cardContent = await card();
+  const cardContainer = document.getElementById("js-card-container");
+
+  if (cardContainer) {
+    cardContainer.innerHTML = cardContent;
+  }
 }
 
 async function renderCarousel() {

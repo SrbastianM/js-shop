@@ -84,23 +84,18 @@ export function initCarousel(container) {
     showItem(currentIndex);
   });
 
-  // Show first item initially
   showItem(0);
 }
 
 export async function renderCarousel() {
   try {
-    // Generate carousel HTML
     const carouselHTML = await carousel();
 
-    // Create a temporary container to hold the HTML
     const tempContainer = document.createElement("div");
     tempContainer.innerHTML = carouselHTML;
 
-    // Find the carousel container
     const carouselContainer = tempContainer.querySelector("#controls-carousel");
 
-    // Initialize the carousel
     if (carouselContainer) {
       initCarousel(carouselContainer);
     }
